@@ -28,11 +28,15 @@ $zen-page-width: $zen-first-sidebar-width + $zen-content-width + $zen-second-sid
 //   - RTL: right
 
 @mixin zen-region($width, $first-margin: 0, $first: "left") {
-  @include float($first); /* LTR */
   width: $width;
+  @include zen-region-layout($width, $first-margin, $first);
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to region's .section. */
+}
+
+@mixin zen-region-layout($width, $first-margin: 0, $first: left) {
+  @include float($first); /* LTR */
   margin: {
     #{$first}: $first-margin; /* LTR */
     #{opposite-position($first)}: -($width + $first-margin); /* LTR */ /* Negative value of region's width + left margin. */
   }
-  padding: 0; /* DO NOT CHANGE. Add padding or margin to region's .section. */
 }

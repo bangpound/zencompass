@@ -9,7 +9,7 @@
  * Content
  */
 #content {
-  @include zen-region(100%, 0, "right");
+  @include zen-region-layout(100%, 0, "right");
 }
 
 .sidebar-first #content .section {
@@ -26,14 +26,14 @@
  * Navigation
  */
 #navigation {
-  @include zen-region(100%, 0, "right");
+  @include zen-region-layout(100%, 0, "right");
 }
 
 /*
  * First sidebar
  */
 .region-sidebar-first {
-  @include zen-region($zen-first-sidebar-width, 0, "right");
+  @include zen-region-layout($zen-first-sidebar-width, 0, "right");
 }
 
 .region-sidebar-first .section {
@@ -44,7 +44,7 @@
  * Second sidebar
  */
 .region-sidebar-second {
-  @include zen-region($zen-second-sidebar-width);
+  @include zen-region-layout($zen-second-sidebar-width);
 }
 
 .region-sidebar-second .section {

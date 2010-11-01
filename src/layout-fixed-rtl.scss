@@ -10,33 +10,33 @@
  */
 #content,
 .no-sidebars #content {
-  @include zen-region($zen-page-width, 0, "right");
+  @include zen-region-layout($zen-page-width, 0, "right");
 }
 
 .sidebar-first #content {
-  @include zen-region($zen-content-width + $zen-second-sidebar-width, $zen-first-sidebar-width, "right");
+  @include zen-region-layout($zen-content-width + $zen-second-sidebar-width, $zen-first-sidebar-width, "right");
 }
 
 .sidebar-second #content {
-  @include zen-region($zen-content-width + $zen-first-sidebar-width, 0, "right");
+  @include zen-region-layout($zen-content-width + $zen-first-sidebar-width, 0, "right");
 }
 
 .two-sidebars #content {
-  @include zen-region($zen-content-width, $zen-first-sidebar-width, "right");
+  @include zen-region-layout($zen-content-width, $zen-first-sidebar-width, "right");
 }
 
 /*
  * Navigation
  */
 #navigation {
-  @include zen-region(100%, 0, "right");
+  @include zen-region-layout(100%, 0, "right");
 }
 
 /*
  * First sidebar
  */
 .region-sidebar-first {
-  @include zen-region($zen-first-sidebar-width, 0, "right");
+  @include zen-region-layout($zen-first-sidebar-width, 0, "right");
 }
 
 .region-sidebar-first .section {
@@ -47,7 +47,7 @@
  * Second sidebar
  */
 .region-sidebar-second {
-  @include zen-region($zen-second-sidebar-width, $zen-content-width + $zen-first-sidebar-width, "right");
+  @include zen-region-layout($zen-second-sidebar-width, $zen-content-width + $zen-first-sidebar-width, "right");
 }
 
 .region-sidebar-second .section {
