@@ -1,0 +1,34 @@
+@import "compass/utilities/general/float";
+@import "compass/utilities/general/clearfix";
+
+$zen-first-sidebar-width: 200px !default;
+$zen-second-sidebar-width: 200px !default;
+$zen-content-width: 560px !default;
+$zen-gutter: 20px !default;
+$zen-navigation-height: 2.3em !default;
+
+$zen-page-width: $zen-first-sidebar-width + $zen-content-width + $zen-second-sidebar-width !default;
+
+@mixin zen-region-visibility {
+  overflow: visible;
+  word-wrap: break-word; /* A very nice CSS3 property */
+}
+
+// $width: width of the region
+// $first-margin: first with respect to reading direction.
+//   - LTR: left margin
+//   - RTL: right margin
+// $first: the first side with respect to reading direction
+//   - LTR: left
+//   - RTL: right
+
+@mixin zen-region($width, $first-margin: 0, $first: "left") {
+  $second: opposite-position($first);
+  @include float($first); /* LTR */
+  width: $width;
+  margin: {
+    #{$first}: $first-margin; /* LTR */
+    #{$second}: -($width + $first-margin); /* LTR */ /* Negative value of region's width + left margin. */
+  }
+  padding: 0; /* DO NOT CHANGE. Add padding or margin to region's .section. */
+}

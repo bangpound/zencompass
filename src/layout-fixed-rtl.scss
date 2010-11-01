@@ -3,63 +3,53 @@
  * RTL companion for the layout-fixed.css file.
  */
 
+@import "layout";
 
 /*
  * Content
  */
 #content,
 .no-sidebars #content {
-  float: right;
-  margin-left: -960px;
-  margin-right: 0; /* Negative value of #content's width + left margin. */
+  @include zen-region($zen-page-width, 0, "right");
 }
 
 .sidebar-first #content {
-  margin-left: -960px; /* The width of .region-sidebar-first. */
-  margin-right: 200px; /* Negative value of #content's width + left margin. */
+  @include zen-region($zen-content-width + $zen-second-sidebar-width, $zen-first-sidebar-width, "right");
 }
 
 .sidebar-second #content {
-  margin-left: -760px;
-  margin-right: 0; /* Negative value of #content's width + left margin. */
+  @include zen-region($zen-content-width + $zen-first-sidebar-width, 0, "right");
 }
 
 .two-sidebars #content {
-  margin-left: -760px; /* The width of .region-sidebar-first */
-  margin-right: 200px; /* Negative value of #content's width + left margin. */
+  @include zen-region($zen-content-width, $zen-first-sidebar-width, "right");
 }
 
 /*
  * Navigation
  */
 #navigation {
-  float: right;
-  margin-left: -100%;
-  margin-right: 0; /* Negative value of #navigation's width + left margin. */
+  @include zen-region(100%, 0, "right");
 }
 
 /*
  * First sidebar
  */
 .region-sidebar-first {
-  float: right;
-  margin-left: -200px;
-  margin-right: 0; /* Negative value of .region-sidebar-first's width + left margin. */
+  @include zen-region($zen-first-sidebar-width, 0, "right");
 }
 
 .region-sidebar-first .section {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 $zen-gutter;
 }
 
 /*
  * Second sidebar
  */
 .region-sidebar-second {
-  float: right;
-  margin-left: -960px; /* Width of content + sidebar-first. */
-  margin-right: 760px; /* Negative value of .region-sidebar-second's width + left margin. */
+  @include zen-region($zen-second-sidebar-width, $zen-content-width + $zen-first-sidebar-width, "right");
 }
 
 .region-sidebar-second .section {
-  margin: 0 20px 0 0;
+  margin: 0 $zen-gutter 0 0;
 }
