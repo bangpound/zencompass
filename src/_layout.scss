@@ -1,11 +1,17 @@
 @import "compass/utilities/general/float";
 
+// First and second sidebar widths are used for all layouts.
 $zen-first-sidebar-width: 200px !default;
 $zen-second-sidebar-width: 200px !default;
 $zen-content-width: 560px !default;
+
+// Added to nested div.section in sidebar regions as inside margin.
 $zen-gutter: 20px !default;
+
+// Added to all main regions as top margin.
 $zen-navigation-height: 2.3em !default;
 
+// Page width (fixed) or min-width (liquid) is sum of content and sidebars.
 $zen-page-width: $zen-first-sidebar-width + $zen-content-width + $zen-second-sidebar-width !default;
 
 @mixin zen-region-visibility {
