@@ -16,7 +16,7 @@ div.error /* Important messages (status, warning, and error) for the user */ {
   padding: 5px 5px 5px 35px; /* LTR */
   color: #000;
   background-color: #ffc;
-  background-image: url(../images/messages-status.png);
+  background-image: image_url("messages-status.png");
   background-repeat: no-repeat;
   background-position: 5px 5px; /* LTR */
 }
@@ -26,7 +26,7 @@ div.status /* Normal priority messages */ {
 
 div.warning /* Medium priority messages */ {
   border-color: #fc0;
-  background-image: url(../images/messages-warning.png);
+  background-image: image_url("messages-warning.png");
 }
 
 div.warning,
@@ -38,7 +38,7 @@ tr.warning {
 div.error /* High priority messages. See also the .error declaration in pages.css. */ {
   /* border: 1px solid #d77; */ /* Drupal core uses: 1px solid #d77 */
   border-color: #c00;
-  background-image: url(../images/messages-error.png);
+  background-image: image_url("messages-error.png");
 }
 
 div.error,
